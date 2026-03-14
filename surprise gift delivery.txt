@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Surprise Gift Delivery - Nationwide Premium Gift Service</title>
+    <meta name="description" content="Surprise Gift Delivery offers 24/7 nationwide delivery of flowers, cakes, balloons, and personalized gifts. Making every occasion special with premium surprises.">
+    <meta name="keywords" content="gift delivery, surprise delivery, flowers delivery, cake delivery, nationwide delivery, birthday surprises">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Surprise Gift Delivery - Delivering Smiles Nationwide">
+    <meta property="og:description" content="The best gift delivery service in the country. Available 24/7.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1549462980-6a013f2bc8a8?q=80&w=1470&auto=format&fit=crop">
+
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #ff4757;
+            --secondary: #2f3542;
+            --accent: #ffa502;
+            --light: #f1f2f6;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        /* --- Scrollbar --- */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--light); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
+
+        /* --- Header & Nav --- */
+        header {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-links li a:hover { color: var(--primary); }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        #hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--white);
+        }
+
+        /* --- Sections General --- */
+        section { padding: 80px 10%; }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+        .section-title .underline {
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+        }
+
+        /* --- About Us --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .about-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 20px 20px 0px var(--primary);
+        }
+
+        /* --- Services --- */
+        #services { background: var(--light); }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 5px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 5px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .service-card h3 { margin-bottom: 10px; color: var(--primary); }
+        .price { font-weight: 700; color: var(--secondary); font-size: 1.2rem; }
+
+        /* --- Gallery --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* --- Testimonials --- */
+        #testimonials { background: var(--light); }
+        .testimonial-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .stars { color: var(--accent); margin-bottom: 15px; }
+        .customer { display: flex; align-items: center; margin-top: 20px; }
+        .customer img { width: 50px; height: 50px; border-radius: 50%; margin-right: 15px; }
+
+        /* --- Contact --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        .contact-info i { color: var(--primary); margin-right: 10px; width: 25px; }
+        .contact-info div { margin-bottom: 20px; }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        .contact-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 50px 10% 20px;
+            text-align: center;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: var(--transition);
+        }
+        .social-links a:hover { color: var(--primary); }
+        .footer-bottom { margin-top: 30px; border-top: 1px solid #444; padding-top: 20px; font-size: 0.9rem; }
+
+        /* --- Floating Buttons --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            line-height: 60px;
+            z-index: 1000;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            display: none;
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                text-align: center;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+            }
+            .nav-links.active { display: flex; }
+            .hamburger { display: block; }
+            .about-container, .contact-wrapper { grid-template-columns: 1fr; }
+            #hero h1 { font-size: 2.5rem; }
+            section { padding: 60px 5%; }
+        }
+
+        /* --- Lightbox Style --- */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        #lightbox img { max-width: 90%; max-height: 80%; border: 5px solid white; }
+        .close-lightbox { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">SURPRISE GIFT</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1 data-aos="fade-down">Delivering Smiles, One Surprise at a Time.</h1>
+        <p data-aos="fade-up" data-aos-delay="200">The most reliable 24/7 nationwide gift delivery service. We turn your emotions into unforgettable moments.</p>
+        <a href="#services" class="btn" data-aos="zoom-in" data-aos-delay="400">View Our Menu</a>
+    </section>
+
+    <!-- About Us -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-img" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=800" alt="About Surprise Delivery">
+            </div>
+            <div class="about-content" data-aos="fade-left">
+                <div class="section-title" style="text-align: left;">
+                    <h2>Our Story</h2>
+                    <div class="underline" style="margin: 10px 0;"></div>
+                </div>
+                <p>With years of experience in creating magical moments, <b>Surprise Gift Delivery</b> is the nation's leading premium gift service. Whether it's a birthday, anniversary, or just because, we handle your emotions with care.</p>
+                <br>
+                <p><i class="fas fa-check-circle" style="color:var(--primary)"></i> 24/7 Nationwide Delivery</p>
+                <p><i class="fas fa-check-circle" style="color:var(--primary)"></i> Premium Quality Products</p>
+                <p><i class="fas fa-check-circle" style="color:var(--primary)"></i> Same Day & Midnight Options</p>
+                <br>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Gift Menu</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="services-grid">
+            <!-- Item 1 -->
+            <div class="service-card" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=500" alt="Flowers">
+                <h3>Luxury Bouquets</h3>
+                <p>Freshly picked exotic flowers arranged by experts.</p>
+                <p class="price">From PKR 2,500</p>
+            </div>
+            <!-- Item 2 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=500" alt="Cakes">
+                <h3>Custom Cakes</h3>
+                <p>Delicious themed cakes for birthdays & anniversaries.</p>
+                <p class="price">From PKR 3,000</p>
+            </div>
+            <!-- Item 3 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1530103862676-fa8c91abe17b?auto=format&fit=crop&q=80&w=500" alt="Balloons">
+                <h3>Balloon Decor</h3>
+                <p>Make the room pop with our creative balloon setups.</p>
+                <p class="price">From PKR 5,000</p>
+            </div>
+            <!-- Item 4 -->
+            <div class="service-card" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1549462980-6a013f2bc8a8?auto=format&fit=crop&q=80&w=500" alt="Combos">
+                <h3>Premium Combos</h3>
+                <p>The perfect mix of flowers, cake, and chocolates.</p>
+                <p class="price">From PKR 7,500</p>
+            </div>
+            <!-- Item 5 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=500" alt="Personalized">
+                <h3>Personalized Gifts</h3>
+                <p>Custom mugs, cushions, and photo frames.</p>
+                <p class="price">From PKR 1,500</p>
+            </div>
+            <!-- Item 6 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&q=80&w=500" alt="Fruit">
+                <h3>Fruit Baskets</h3>
+                <p>Healthy and fresh seasonal fruit arrangements.</p>
+                <p class="price">From PKR 4,000</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Gallery</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=800')"><img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&q=80&w=400"></div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=800')"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&q=80&w=400"></div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1558636508-e0ee452cc4f5?auto=format&fit=crop&q=80&w=800')"><img src="https://images.unsplash.com/photo-1558636508-e0ee452cc4f5?auto=format&fit=crop&q=80&w=400"></div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1516054144188-f93928df3693?auto=format&fit=crop&q=80&w=800')"><img src="https://images.unsplash.com/photo-1516054144188-f93928df3693?auto=format&fit=crop&q=80&w=400"></div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1544411047-c4915839bd31?auto=format&fit=crop&q=80&w=800')"><img src="https://images.unsplash.com/photo-1544411047-c4915839bd31?auto=format&fit=crop&q=80&w=400"></div>
+            <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&q=80&w=800')"><img src="https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&q=80&w=400"></div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Happy Customers</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="testimonial-container">
+            <div class="testimonial-card" data-aos="zoom-in">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"The midnight delivery was exactly on time! The flowers were fresh and the cake was delicious. Thank you!"</p>
+                <div class="customer">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                    <div><strong>Sarah Khan</strong><br><small>Karachi</small></div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Best service in the city. The balloon decor was stunning. My sister loved her birthday surprise!"</p>
+                <div class="customer">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                    <div><strong>Ahmed Ali</strong><br><small>Lahore</small></div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                <p>"Great experience! The personalized mug was exactly how I wanted it. Highly recommended."</p>
+                <div class="customer">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
+                    <div><strong>Maria B.</strong><br><small>Islamabad</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Contact Us</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info" data-aos="fade-right">
+                <h3>Get In Touch</h3>
+                <p style="margin-bottom: 20px;">Ready to plan a surprise? Reach out to us anytime!</p>
+                <div><i class="fas fa-phone"></i> 03371347554</div>
+                <div><i class="fas fa-envelope"></i> info@surprisegift.com</div>
+                <div><i class="fas fa-clock"></i> 24 Hours Open (7 Days a week)</div>
+                <div><i class="fas fa-map-marker-alt"></i> Nationwide Service, Pakistan</div>
+            </div>
+            <div class="contact-form" data-aos="fade-left">
+                <form id="form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <input type="text" placeholder="Delivery Address" required>
+                    <textarea rows="4" placeholder="Your Message / Occasion Details"></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 20px;">SURPRISE GIFT DELIVERY</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/p/DU7Yc6SjK0j/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/923371347554" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Surprise Gift Delivery. All Rights Reserved.</p>
+            <p><small>Delivering Joy Across Pakistan</small></p>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/923371347554" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <div class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="">
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({ duration: 1000, once: true });
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Scroll to Top logic
+        const backToTop = document.getElementById("backToTop");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backToTop.style.display = "block";
+            } else {
+                backToTop.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Lightbox Logic
+        function openLightbox(src) {
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightbox-img').src = src;
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Simple Form Submit
+        document.getElementById('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your request has been sent. We will contact you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
